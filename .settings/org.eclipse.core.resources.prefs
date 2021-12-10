@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/com/gulukal/project/Main.java=UTF-8
+encoding//src/com/gulukal/project/control/MovieEntityController.java=UTF-8
+encoding//src/com/gulukal/project/control/RatingEntityController.java=UTF-8
+encoding//src/com/gulukal/project/control/TagEntityController.java=UTF-8
+encoding//src/com/gulukal/project/control/deneme.java=UTF-8
+encoding//src/com/gulukal/project/entity/Controllable.java=UTF-8
+encoding//src/com/gulukal/project/utils/HibernateUtils.java=UTF-8
