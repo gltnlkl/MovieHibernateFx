@@ -1,22 +1,19 @@
 package com.gulukal.project.view.login;
 
-import java.io.IOException;
-
-import com.gulukal.project.Main;
-import com.gulukal.project.MovieDatabaseManager;
 import com.gulukal.project.entity.LoginEntity;
+import com.gulukal.project.view.util.UtilsForGui;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 
 public class LoginViewController {
+
+	UtilsForGui util = new UtilsForGui();
+
 	@FXML
 	private TextField     fldMail;
 	@FXML
@@ -29,12 +26,31 @@ public class LoginViewController {
 	private Button btnCommit;
 
 	@FXML
+	private Button btnNewUser;
+
+	@FXML
 	void cancelAction(MouseEvent event) {
-		System.exit(0);
+
+		util.cancelAction();
+	}
+
+	@FXML
+	void newUserAction(MouseEvent event) {
+
+		String rootFxml     = "view/newUser/NewUserView";
+		String rootFxmlLong = "../../view/newUser/NewUserView.fxml";
+		String rootCss      = "../../view/main/application.css";
+
+		util.switchPage(rootFxml, rootFxmlLong, rootCss);
 	}
 
 	@FXML
 	void commitAction(MouseEvent event) {
+
+		String rootFxml     = "view/main/MainView";
+		String rootFxmlLong = "../../view/main/MainView.fxml";
+		String rootCss      = "../../view/main/application.css";
+
 		String mail     = fldMail.getText();
 		String password = fldPassword.textProperty().get();
 
@@ -49,24 +65,8 @@ public class LoginViewController {
 			fldPassword.clear();
 		}
 		else {
-			try {
-				MovieDatabaseManager.setRoot("view/main/MainView");
-			}
-			catch (Exception ex) {
-				// TODO: handle exception
-			}
-			BorderPane root;
-			try {
 
-				root = (BorderPane) FXMLLoader.load(getClass().getResource("../../view/main/MainView.fxml"));
-				Scene scene = new Scene(root);
-				scene.getStylesheets().add(getClass().getResource("../../view/main/application.css").toExternalForm());
-				Main.getPrimaryStage().setScene(scene);
-				Main.getPrimaryStage().show();
-			}
-			catch (IOException ex) {
-				ex.printStackTrace();
-			}
+			util.switchPage(rootFxml, rootFxmlLong, rootCss);
 		}
 	}
 }

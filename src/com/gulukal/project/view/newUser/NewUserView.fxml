@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="400.0" prefWidth="800.0" style="-fx-border-color: #535353;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gulukal.project.view.login.LoginViewController">
+<BorderPane prefHeight="400.0" prefWidth="800.0" style="-fx-border-color: #535353;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gulukal.project.view.newUser.NewUserController">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #fbfbfb;" BorderPane.alignment="CENTER">
          <children>
@@ -27,7 +27,7 @@
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #F4FF69;" BorderPane.alignment="CENTER">
          <children>
-            <PasswordField fx:id="fldPassword" layoutX="161.0" layoutY="195.0" prefHeight="25.0" prefWidth="160.0" promptText="password" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;">
+            <PasswordField fx:id="fldNewPassword" layoutX="161.0" layoutY="195.0" prefHeight="25.0" prefWidth="160.0" promptText="password" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;">
                <font>
                   <Font name="Yu Gothic Light" size="12.0" />
                </font></PasswordField>
@@ -35,7 +35,7 @@
                <font>
                   <Font name="Yu Gothic Light" size="20.0" />
                </font></Text>
-            <Text fill="#535353" layoutX="37.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Mail">
+            <Text fill="#535353" layoutX="37.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail">
                <font>
                   <Font name="Yu Gothic Light" size="20.0" />
                </font></Text>
@@ -49,29 +49,22 @@
                         <Font name="Yu Gothic Light" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnCommit" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#commitAction" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;" text="Login" textFill="#535353">
+                  <Button fx:id="btnNewUserCommit" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#NewUserCreateAction" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;" text="Login" textFill="#535353">
                      <font>
                         <Font name="Yu Gothic Light" size="12.0" />
                      </font></Button>
               </buttons>
             </ButtonBar>
-            <TextField fx:id="fldMail" layoutX="161.0" layoutY="151.0" prefHeight="25.0" prefWidth="160.0" promptText="mail" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;">
+            <TextField fx:id="fldNewMail" layoutX="161.0" layoutY="151.0" prefHeight="25.0" prefWidth="160.0" promptText="mail" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;">
                <font>
                   <Font name="Yu Gothic Light" size="12.0" />
                </font>
             </TextField>
-            <ButtonBar layoutX="135.0" layoutY="286.0" prefHeight="36.0" prefWidth="187.0">
-               <buttons>
-                  <Button fx:id="btnNewUser" mnemonicParsing="false" onMouseClicked="#newUserAction" prefHeight="26.0" prefWidth="161.0" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;" text="New User?" textFill="#535353">
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                     <font>
-                        <Font name="Yu Gothic Light" size="12.0" />
-                     </font>
-                  </Button>
-               </buttons>
-            </ButtonBar>
+            <Text fill="#535353" layoutX="37.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User">
+               <font>
+                  <Font name="Yu Gothic Light" size="20.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </right>

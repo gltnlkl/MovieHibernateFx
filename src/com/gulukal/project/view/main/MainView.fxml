@@ -8,7 +8,7 @@
 
 <BorderPane prefHeight="400.0" prefWidth="800.0" style="-fx-border-color: #535353;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <right>
-      <AnchorPane prefHeight="398.0" prefWidth="801.0" style="-fx-background-color: #F4FF69;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="398.0" prefWidth="801.0" style="-fx-background-color: #F4FF69; -fx-border-color: #535353;" BorderPane.alignment="CENTER">
          <children>
             <Text fill="#535353" layoutX="294.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BASARILI" wrappingWidth="212.837890625">
                <font>
