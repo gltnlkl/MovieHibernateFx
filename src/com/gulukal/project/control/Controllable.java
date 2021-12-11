@@ -1,4 +1,4 @@
-package com.gulukal.project.entity;
+package com.gulukal.project.control;
 
 import java.util.ArrayList;
 import org.hibernate.Session;

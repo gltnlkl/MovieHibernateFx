@@ -5,18 +5,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+	public static Stage primaryStage;
+
 	public static void main(String[] args) {
 
-		MainMethod mainMethod = new MainMethod();
+		// MainMethod mainMethod = new MainMethod();
 
-//		mainMethod.addMovie();
-		
-		mainMethod.findMovieById();
-		
-//		mainMethod.findMovieByTitle();
+		// mainMethod.addMovie();
+
+		// mainMethod.findMovieById();
+
+		// mainMethod.findMovieByTitle();
+
+		// mainMethod.loginUser();
 
 		launch(args);
 	}
@@ -24,19 +29,29 @@ public class Main extends Application {
 	// javafx bilgileri burada bulunuyor
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+
+	public void start(Stage primary) throws Exception {
 
 		try {
-			BorderPane root  = (BorderPane) FXMLLoader.load(getClass().getResource("MovieDB.fxml"));
-			Scene      scene = new Scene(root, 400, 400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			Main.primaryStage = primary;
+			BorderPane root  = (BorderPane) FXMLLoader.load(getClass().getResource("view/login/LoginView.fxml"));
+			Scene      scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("view/main/application.css").toExternalForm());
+			primary.setScene(scene);
+			primary.alwaysOnTopProperty();
+			primary.centerOnScreen();
+			primary.initStyle(StageStyle.UNDECORATED);
+			primary.setResizable(false);
+			primary.show();
 
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static Stage getPrimaryStage() {
+		return Main.primaryStage;
 	}
 
 }

@@ -1,6 +1,8 @@
 package com.gulukal.project;
 
+import com.gulukal.project.control.LoginEntityController;
 import com.gulukal.project.control.MovieEntityController;
+import com.gulukal.project.entity.LoginEntity;
 import com.gulukal.project.entity.MovieEntity;
 
 public class MainMethod {
@@ -17,6 +19,18 @@ public class MainMethod {
 
 		mcont.add(moveieEntity);
 
+	}
+
+	public void loginUser() {
+
+		LoginEntity loginEntity = new LoginEntity();
+
+		LoginEntityController loginCont = new LoginEntityController();
+
+		loginEntity.setMail("gulten@mail.com");
+		loginEntity.setPassword("1234");
+
+		loginCont.add(loginEntity);
 	}
 
 	public void findMovieById() {

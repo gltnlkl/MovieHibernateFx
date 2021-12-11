@@ -1,6 +1,5 @@
 package com.gulukal.project.control;
 
-import com.gulukal.project.entity.Controllable;
 import com.gulukal.project.entity.RatingEntity;
 
 

@@ -1,7 +1,5 @@
 package com.gulukal.project.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,12 +21,8 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "raitings")
-public class RatingEntity implements Serializable {
+public class RatingEntity  {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,5 @@
 package com.gulukal.project.entity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,12 +23,8 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "movies")
-public class MovieEntity implements Serializable {
+public class MovieEntity {
 
-	/**  
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ToString.Exclude
@@ -38,11 +33,11 @@ public class MovieEntity implements Serializable {
 	private int               year;
 	private String            genres;
 
-	@OneToMany(mappedBy = "movieId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "movieId", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 
 	private List<RatingEntity> ratings = new ArrayList<>();
 
-	@OneToMany(mappedBy = "movieId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "movieId", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 
 	private List<TagEntity> tags = new ArrayList<>();
 

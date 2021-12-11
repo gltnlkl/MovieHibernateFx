@@ -4,9 +4,7 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 
-import com.gulukal.project.entity.Controllable;
 import com.gulukal.project.entity.MovieEntity;
-import com.gulukal.project.model.Movie;
 
 public class MovieEntityController implements Controllable<MovieEntity> {
 
@@ -83,7 +81,7 @@ public class MovieEntityController implements Controllable<MovieEntity> {
 		TypedQuery<MovieEntity> typedQuery = session.createQuery(hql, MovieEntity.class);
 
 		typedQuery.setParameter("key", id);
-		
+
 		typedQuery.setMaxResults(1); // limit 1
 
 		MovieEntity movie = typedQuery.getSingleResult();
